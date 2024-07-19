@@ -1,0 +1,4 @@
+<page>
+<template-instance>sponsor-page</template-instance>
+<authentication>user</authentication>
+</page>

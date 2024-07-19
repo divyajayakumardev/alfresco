@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+
+<!-- Core and miscellaneous bean definitions -->
+<beans>
+
+    <bean id="base.search.cmis.alfresco.switching" abstract="true" class="org.alfresco.repo.search.impl.DbOrIndexSwitchingQueryLanguage">
+        <property name="factories">
+            <list>
+                <ref bean="search.indexerAndSearcherFactory" />
+            </list>
+        </property>
+        <property name="name">
+            <value>cmis-alfresco</value>
+        </property>
+        <property name="dbQueryLanguage">
+            <ref bean="search.cmis.alfresco.db" />
+        </property>
+        <property name="indexQueryLanguage">
+            <ref bean="search.cmis.alfresco.index" />
+        </property>
+
+        <property name="queryConsistency" value="${query.cmis.queryConsistency}"/>
+        <property name="solrQueryConsistency" value="${solr.query.cmis.queryConsistency}"/>
+
+        <!-- Deprecated -->
+        <property name="hybridEnabled" value="${query.hybrid.enabled}"/>
+        <property name="solrHybridEnabled" value="${solr.query.hybrid.enabled}"/>
+
+        <property name="nodeService" ref="NodeService"/>
+        <property name="searchDao" ref="searchDAO"/>
+    </bean>
+
+    <bean id="base.search.cmis.alfresco.switching1.1" abstract="true" class="org.alfresco.repo.search.impl.DbOrIndexSwitchingQueryLanguage">
+        <property name="factories">
+            <list>
+                <ref bean="search.indexerAndSearcherFactory" />
+            </list>
+        </property>
+        <property name="name">
+            <value>cmis-alfresco</value>
+        </property>
+        <property name="dbQueryLanguage">
+            <ref bean="search.cmis.alfresco.db1.1" />
+        </property>
+        <property name="indexQueryLanguage">
+            <ref bean="search.cmis.alfresco.index" />
+        </property>
+
+        <property name="queryConsistency" value="${query.cmis.queryConsistency}"/>
+
+        <!-- Deprecated -->
+        <property name="solrQueryConsistency" value="${solr.query.cmis.queryConsistency}"/> 
+
+    </bean>
+
+    <bean id="base.search.cmis.strict.switching" abstract="true" class="org.alfresco.repo.search.impl.DbOrIndexSwitchingQueryLanguage">
+        <property name="factories">
+            <list>
+                <ref bean="search.indexerAndSearcherFactory" />
+            </list>
+        </property>
+        <property name="name">
+            <value>cmis-strict</value>
+        </property>
+        <property name="dbQueryLanguage">
+            <ref bean="search.cmis.alfresco.db" />
+        </property>
+        <property name="indexQueryLanguage">
+            <ref bean="search.cmis.alfresco.index" />
+        </property>
+
+        <property name="queryConsistency" value="${query.cmis.queryConsistency}"/>
+        <property name="solrQueryConsistency" value="${solr.query.cmis.queryConsistency}"/>
+
+        <!-- Deprecated -->
+        <property name="hybridEnabled" value="${query.hybrid.enabled}"/>
+        <property name="solrHybridEnabled" value="${solr.query.hybrid.enabled}"/>
+
+        <property name="nodeService" ref="NodeService"/>
+        <property name="searchDao" ref="searchDAO"/>
+    </bean>
+
+    <bean id="search.cmis.alfresco.db" class="org.alfresco.repo.search.impl.DbCmisQueryLanguage" >
+        <property name="factories">
+            <list>
+                <ref bean="search.indexerAndSearcherFactory" />
+            </list>
+        </property>
+        <property name="queryEngine">
+            <ref bean="search.dbQueryEngine" />
+        </property>
+        <property name="cmisDictionaryService">
+            <ref bean="OpenCMISDictionaryService" />
+        </property>
+        <property name="metadataIndexCheck1">
+            <ref bean="metadataQueryIndexesCheck" />
+        </property>
+        <property name="metadataIndexCheck2">
+            <ref bean="metadataQueryIndexesCheck2" />
+        </property>
+    </bean>
+
+    <bean id="search.cmis.alfresco.db1.1" class="org.alfresco.repo.search.impl.DbCmisQueryLanguage" >
+        <property name="factories">
+            <list>
+                <ref bean="search.indexerAndSearcherFactory" />
+            </list>
+        </property>
+        <property name="queryEngine">
+            <ref bean="search.dbQueryEngine" />
+        </property>
+        <property name="cmisDictionaryService">
+            <ref bean="OpenCMISDictionaryService1.1" />
+        </property>
+        <property name="metadataIndexCheck1">
+            <ref bean="metadataQueryIndexesCheck" />
+        </property>
+        <property name="metadataIndexCheck2">
+            <ref bean="metadataQueryIndexesCheck2" />
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+<scope>page</scope>
+<region-id>create-user</region-id>
+<soruce-id>sponsor-page</soruce-id>
+    <url>/extras/components/console/create-users</url>
+</component>

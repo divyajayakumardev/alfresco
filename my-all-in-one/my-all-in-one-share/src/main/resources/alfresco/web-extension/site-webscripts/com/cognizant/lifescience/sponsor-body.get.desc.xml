@@ -1,0 +1,5 @@
+<webscript>
+    <shortname>sponsorbody</shortname>
+    <description>Returns the body content for the Sponsor page.</description>
+    <url>/components/sponsor-page/body</url>
+</webscript>

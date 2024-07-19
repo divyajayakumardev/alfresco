@@ -1,0 +1,6 @@
+<webscript>
+    <shortname>Study Page</shortname>
+    <description>Study page definition</description>
+    <family>Share</family>
+    <url>/study-page</url>
+</webscript>   

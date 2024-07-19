@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Created-By: Maven JAR Plugin 3.3.0
+Build-Jdk-Spec: 17
+Specification-Title: Alfresco Repository
+Specification-Version: 0.0
+Specification-Vendor: Alfresco Software
+Implementation-Title: Alfresco Repository
+Implementation-Vendor: Alfresco Software
+Build-Date: 2024-02-29T15:57:34Z
+Implementation-Version: 23.2.0.60
+
